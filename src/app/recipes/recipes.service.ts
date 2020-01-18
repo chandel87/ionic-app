@@ -30,4 +30,8 @@ export class RecipesService {
   public getRecipe(recipeId: string) {
     return [...this.recipes].find(recipe => recipe.id === recipeId); // using spread operator to return a copy
   }
+
+  public deleteRecipe(recipeId: string) {
+    return this.recipes.filter(recipe => recipe.id !== recipeId);
+  }
 }
