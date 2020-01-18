@@ -2,12 +2,21 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  { path: '', redirectTo: 'recipes', pathMatch: 'full' },
   {
     path: 'recipes',
-    loadChildren: () => import('./recipes/recipes.module').then( m => m.RecipesPageModule)
-  },
+    children: [
+      {
+        path: '',   // url ->  http://localhost:8100/recipes
+        loadChildren: () => import('./recipes/recipes.module').then( m => m.RecipesPageModule)
+        // loadChildren: './recipes/recipes.module#RecipesPageModule'    // alternative approach
+      },
+      {
+        path: ':recipeId',  // url -> http://localhost:8100/recipe-detail/recipeId
+        loadChildren: () => import('./recipes/recipe-detail/recipe-detail.module').then( m => m.RecipeDetailPageModule)
+      }
+    ]
+  }
 ];
 
 @NgModule({
@@ -16,4 +25,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

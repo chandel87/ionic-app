@@ -1,0 +1,1 @@
+Generating new page : ionic generate page recipes/recipe-detail
