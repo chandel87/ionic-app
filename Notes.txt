@@ -1,1 +1,18 @@
-Generating new page : ionic generate page recipes/recipe-detail
+Angular CLI:                                    https://cli.angular.io
+Node.js:                                        https://nodejs.org
+Angular Docs:                                   https://angular.io/docs
+VS Code:                                        https://code.visualstudio.com
+Official Ionic Component Docs:                  https://ionicframework.com/docs/components
+Navigation in Angular:                          https://ionicframework.com/docs/navigation/angular
+Ionic Component Docs:                           https://ionicframework.com/docs/components/
+Running the App on iOS:                         https://ionicframework.com/docs/building/ios
+Running the App on Android:                     https://ionicframework.com/docs/building/android
+Official Capacitor Docs:                        https://capacitor.ionicframework.com/
+
+
+ionic capacitor run android -> this internally runs all three required commands in one go
+1. ng build 
+2. ionic capacitor add android
+3. ionic capacitor copy android
+
+Generating new page =>   ionic generate page recipes/recipe-detail

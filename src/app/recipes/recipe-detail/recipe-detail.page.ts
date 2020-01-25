@@ -24,6 +24,7 @@ export class RecipeDetailPage implements OnInit {
     this.activatedRoute.paramMap.subscribe((paramsMap) => {
       if (!paramsMap.has('recipeId')) {
         // redirect to home page if recipe id doesn't exist in params map'
+        this.router.navigate(['/recipes']);
         return;
       }
       const recipeId = paramsMap.get('recipeId');
